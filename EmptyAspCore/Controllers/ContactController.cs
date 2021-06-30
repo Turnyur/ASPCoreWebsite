@@ -48,7 +48,7 @@ namespace EmptyAspCore.Controllers
 
                 contact.Name = collection["Name"].ToString();
                 contact.Email = collection["Email"].ToString();
-                contact.Id = 1; // Manual insertion intended
+                contact.Id = 12; // Manual insertion intended
                 _contactRepository.Insert(contact);
 
                 return Json(contact);
