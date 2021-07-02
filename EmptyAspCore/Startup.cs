@@ -1,3 +1,4 @@
+using EmptyAspCore.Config;
 using EmptyAspCore.DAL;
 using EmptyAspCore.Models;
 using EmptyAspCore.Services.Repository;
@@ -32,6 +33,16 @@ namespace EmptyAspCore
             });
 
             services.AddControllersWithViews();
+            services.AddCors(
+                options=>options.AddPolicy(
+                    WebConstants.ALLOWALL_POLICY,
+                    builder=> 
+                    builder.AllowAnyHeader()
+                    .AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    
+                )
+                );;
             services.AddTransient<IContactRepository, ContactRepository>();
             services.AddSwaggerGen();
         }
@@ -51,6 +62,7 @@ namespace EmptyAspCore
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();
+            app.UseCors();
             
             app.UseEndpoints(endpoints =>
             {
