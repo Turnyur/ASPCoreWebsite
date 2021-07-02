@@ -11,7 +11,7 @@ namespace EmptyAspCore.DAL
     public class ApplicationDbContext:DbContext
     {
         public DbSet<Contact> Contacts { get; set; }
-        //  public DbSet<Person> Persons { get; set; }
+        public DbSet<Person> Persons { get; set; }
         public DbSet<LoanType> LoanTypes { get; set; }
         public DbSet<LoanRequest> LoanRequests { get; set; }
         public DbSet<Applicant> Applicants { get; set; }
@@ -35,6 +35,9 @@ namespace EmptyAspCore.DAL
 
 
         }
+
+        
+        public DbSet<EmptyAspCore.Models.Person> Person { get; set; }
         
     }
 }
