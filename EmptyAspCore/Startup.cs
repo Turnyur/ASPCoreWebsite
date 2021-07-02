@@ -41,6 +41,7 @@ namespace EmptyAspCore
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                
             }
 
             app.UseHttpsRedirection();
